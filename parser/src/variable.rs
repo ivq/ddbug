@@ -90,6 +90,12 @@ impl<'input> Variable<'input> {
         self.symbol_name
     }
 
+    /// The type offset of the variable.
+    #[inline]
+    pub fn type_offset(&self) -> TypeOffset {
+        self.ty
+    }
+
     /// The type of the variable.
     ///
     /// Returns `None` if the type is invalid.

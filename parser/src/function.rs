@@ -176,6 +176,12 @@ impl<'input> Function<'input> {
         &self.parameters
     }
 
+    /// The debuginfo offset of the return type of this function.
+    #[inline]
+    pub fn type_offset(&self) -> TypeOffset {
+        self.return_type
+    }
+
     /// The return type.
     ///
     /// Returns `None` if the return type is invalid.

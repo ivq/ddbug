@@ -1196,6 +1196,12 @@ pub struct ArrayType<'input> {
 }
 
 impl<'input> ArrayType<'input> {
+    /// The debuginfo offset of the type of array elements.
+    #[inline]
+    pub fn type_offset(&self) -> TypeOffset {
+        self.ty
+    }
+
     /// The type of the elements in the array.
     pub fn element_type<'a>(&self, hash: &'a FileHash<'input>) -> Option<Cow<'a, Type<'input>>> {
         Type::from_offset(hash, self.ty)
